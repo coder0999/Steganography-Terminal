@@ -7,6 +7,7 @@
     <meta name="description" content="أداة ويب آمنة ومفتوحة المصدر لإخفاء رسالة سرية داخل نص ظاهر (إخفاء معلومات) مع طبقة تشفير قوية. تعمل بالكامل في متصفحك.">
     <meta name="keywords" content="steganography, encryption, hide text, privacy, security, تشفير, إخفاء النص, أمان, خصوصية, أداة ويب, مفتوح المصدر, github">
     <meta name="author" content="coder0999">
+    <meta name="google-site-verification" content="4cXf6MG9vkQfcq1vIDJU6q3uVEGXllTCE5dqbCLocpE" />
 
     <style>
         :root {
@@ -389,7 +390,7 @@
             const binaryHiddenText = textToBinary(hiddenText);
             const encryptedBinary = complexScramble(binaryHiddenText, SECRET_KEY);
             const zeroWidthString = encryptedBinary.split('').map(bit => bit === '0' ? ZERO_WIDTH_SPACE : ZERO_WIDTH_NON_JOINER).join('');
-            const finalResult = visibleText.slice(0, 1) + zeroWidthString + visibleText.slice(1);
+            const finalResult = visibleText + zeroWidthString;
             document.getElementById('encryptResult').value = finalResult;
         }
 
